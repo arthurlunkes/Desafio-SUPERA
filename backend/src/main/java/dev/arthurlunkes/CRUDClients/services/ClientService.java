@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -23,7 +24,9 @@ public class ClientService {
     }
 
     public ClientModel findClientById(Long id) {
+
         return clientRepository.findById(id).get();
+
     }
 
     public ClientModel saveClient(RequestClientDTO requestClientModel) {
@@ -46,7 +49,6 @@ public class ClientService {
         }
 
         return newClients;
-
     }
 
     public ClientModel updateClient(ClientModel clientOld) {
@@ -55,7 +57,9 @@ public class ClientService {
     }
 
     public void deleteClient(Long id) {
+
         clientRepository.deleteById(id);
+
     }
 
 }
