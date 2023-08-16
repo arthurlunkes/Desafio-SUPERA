@@ -1,7 +1,7 @@
 import './CardClient.css'
 import React from 'react'
 
-const CardClient = ({Client}) => {
+const CardClient = ({Client, editClient, deleteClient}) => {
     return (
         <div className="card">
 
@@ -23,8 +23,9 @@ const CardClient = ({Client}) => {
                 </div>
             </div>
 
-            <div>
-                
+            <div className='buttons'>
+                <button className='btn btn-warning' onClick={() => editClient(Client)}>Editar</button>
+                <button className='btn btn-danger' onClick={() => deleteClient(Client.id)}>Excluir</button>
             </div>
 
         </div>
